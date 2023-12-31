@@ -3,18 +3,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "FFmpegKit",
+    name: "FFmpegKit-SPM",
     platforms: [.iOS(.v13)],
     products: [
         .library(
-            name: "FFmpegKit",
+            name: "FFmpegKit-SPM",
             targets: [
-                "FFmpegKit", "ffmpegkit", "avcodec", "avdevice", "avfilter", "avformat", "avutil", "swresample", "swscale"
+                "FFmpegKit-SPM", "ffmpegkit", "avcodec", "avdevice", "avfilter", "avformat", "avutil", "swresample", "swscale"
             ]),
     ],
     targets: [
         .target(
-            name: "FFmpegKit"
+            name: "FFmpegKit-SPM"
         ),
         .binaryTarget(name: "ffmpegkit", url: "https://github.com/yangliu-1995/FFmpegKit/releases/download/0.0.1/ffmpegkit.zip", checksum: "f53ef9e77fb931562436c8e2ec364a784921c8bc3f97adbedd6e7abfc8d74315"),
         .binaryTarget(name: "avcodec", url: "https://github.com/yangliu-1995/FFmpegKit/releases/download/0.0.1/libavcodec.zip", checksum: "95cf224c7a18e2317bf16d4c76133b7eb80375e58f517265920eb1ef9bb10102"),
