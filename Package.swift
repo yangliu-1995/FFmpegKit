@@ -31,15 +31,8 @@ let package = Package(
         .target(
             name: "FFmpegKit",
             dependencies: [
-                .target(name: "MoltenVK", condition: .when(platforms: [.macOS, .iOS, .tvOS, .macCatalyst])),
                 "libshaderc_combined",
-                "lcms2",
-                "libdav1d",
-                .target(name: "libplacebo", condition: .when(platforms: [.macOS, .iOS, .tvOS, .macCatalyst])),
-                .target(name: "libzvbi", condition: .when(platforms: [.macOS, .iOS, .tvOS, .visionOS])),
-                "libsrt",
-                "libfreetype", "libfribidi", "libharfbuzz", "libass",
-                "gmp", "nettle", "hogweed", "gnutls", "libsmbclient",
+                "gmp", "nettle", "hogweed", "gnutls",
                 "Libavcodec", "Libavfilter", "Libavformat", "Libavutil", "Libswresample", "Libswscale",
             ],
             linkerSettings: [
@@ -98,14 +91,6 @@ let package = Package(
                 .brew(["sdl2"]),
             ]
         ),
-//        .target(
-//            name: "libavutil",
-//            cSettings: [.headerSearchPath("../")]
-//        ),
-//        .executableTarget(
-//            name: "BuildFFmpegPlugin",
-//            path: "Plugins/BuildFFmpeg"
-//        ),
         .plugin(
             name: "BuildFFmpeg",
             capability: .command(
