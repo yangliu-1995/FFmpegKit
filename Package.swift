@@ -8,7 +8,6 @@ let package = Package(
     products: [
         .library(
             name: "FFmpegKit",
-//            type: .static,
             targets: ["FFmpegKit"]
         ),
         .library(name: "Libavcodec", targets: ["Libavcodec"]),
@@ -17,12 +16,6 @@ let package = Package(
         .library(name: "Libavutil", targets: ["Libavutil"]),
         .library(name: "Libswresample", targets: ["Libswresample"]),
         .library(name: "Libswscale", targets: ["Libswscale"]),
-        .library(name: "libass", targets: ["libfreetype", "libfribidi", "libharfbuzz", "libass"]),
-        .library(name: "libmpv", targets: ["FFmpegKit", "libass", "libmpv"]),
-        .executable(name: "ffmpeg", targets: ["ffmpeg"]),
-        .executable(name: "ffplay", targets: ["ffplay"]),
-        .executable(name: "ffprobe", targets: ["ffprobe"]),
-        .plugin(name: "BuildFFmpeg", targets: ["BuildFFmpeg"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -31,7 +24,6 @@ let package = Package(
         .target(
             name: "FFmpegKit",
             dependencies: [
-                "libshaderc_combined",
                 "gmp", "nettle", "hogweed", "gnutls",
                 "Libavcodec", "Libavfilter", "Libavformat", "Libavutil", "Libswresample", "Libswscale",
             ],
